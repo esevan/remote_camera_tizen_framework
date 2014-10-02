@@ -1,0 +1,14 @@
+<manifest>
+	<define>
+		<domain name="remote-key-framework" />
+		<provide>
+			<label name="remote-key-framework::server" />
+		</provide>
+	</define>
+	<request>
+		<domain name="remote-key-framework" />
+	</request>
+	<assign>
+		<filesystem path="/etc/rc.d/init.d/rkfsvc" label="_" exec_label="none" />
+	</assign>
+</manifest>

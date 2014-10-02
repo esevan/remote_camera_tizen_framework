@@ -1,0 +1,11 @@
+
+[Unit]
+Description=Start the remote key framework
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rkf_server
+
+[Install]
+WantedBy=multi-user.target
+
