@@ -29,7 +29,8 @@ ADD_EXECUTABLE(${PROJECT_NAME}
 # Set LDFLAGS
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${rpkgs-dlog_LDFLAGS} ${rpkgs-capi_LDFLAGS} ${rpkgs-glib_LDFLAGS} "-ldl -lrt")
 
-# Set cmake CFLAGS
+# Set CFLAGS
+ADD_DEFINITIONS(-Wall -O3) 
 SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 
 # Move result binary to the target position(/usr/bin)

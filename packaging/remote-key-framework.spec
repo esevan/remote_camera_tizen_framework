@@ -8,7 +8,7 @@ License:    Apache License, Version 2.0
 Source0:    %{name}-%{version}.tar.gz
 Source1:    remote-key-framework.service
 
-## Required packages
+# Required packages
 # Pkgconfig tool helps to find libraries that have already been installed
 BuildRequires:  cmake
 BuildRequires:  libattr-devel
@@ -20,6 +20,7 @@ BuildRequires:  pkgconfig(dlog)
 ## Description string that this package's human users can understand
 %description
 Remote key framework
+
 
 ## Preprocess script
 %prep
@@ -50,7 +51,7 @@ ln -s ../remote-key-framework.service %{buildroot}%{_libdir}/systemd/system/mult
 ## Postprocess script
 %post 
 
-## File list
+## Binary Package: File list
 %files
 %manifest remote-key-framework.manifest
 %{_bindir}/rkf_server
