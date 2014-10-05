@@ -1,25 +1,36 @@
-cmake_minimum_required(VERSION 2.6)
 project(rkf_server CXX)
 
-#add_definitions(-Wall -g -DUSE_FILE_DEBUG)
-#add_definitions(-Wall -g -D_DEBUG)
-##add_definitions(-Wall -g -pg)
+# Find required modules
+# PKG_CHECK_MODULES: used to check for given modules
+# PKG_SEARCH_MODULE: used to check for given modules and uses the first working one
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(rpkgs-dlog REQUIRED dlog)
+PKG_CHECK_MODULES(rpkgs-capi REQUIRED capi-network-bluetooth capi-system-info)
+PKG_CHECK_MODULES(rpkgs-glib REQUIRED glib-2.0)
 
-PKG_SEARCH_MODULE(bluetooth REQUIRED capi-network-bluetooth)
-PKG_SEARCH_MODULE(system-info REQUIRED capi-system-info)
+# Add CFLAGS used for required modules
+ADD_DEFINITIONS(${rpkgs-dlog_CFLAGS})
+ADD_DEFINITIONS(${rpkgs-capi_CFLAGS})
+ADD_DEFINITIONS(${rpkgs-glib_CFLAGS})
 
+# Set include directories
 INCLUDE_DIRECTORIES(
 	${CMAKE_CURRENT_SOURCE_DIR}/include
-	${bluetooth_INCLUDE_DIRS}
-	${system-info_INCLUDE_DIRS}
+	${rpkgs-dlog_INCLUDE_DIRS}
+	${rpkgs-capi_INCLUDE_DIRS}
 	)
 
+# Set sources
 ADD_EXECUTABLE(${PROJECT_NAME}
+	src/common.cpp
 	src/main.cpp
 )
 
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${rpkgs_LDFLAGS})
-SET(CMAKE_CXX_FLAGS "-ldl -lpthread ${CMAKE_CXX_FLAGS}")
+# Set LDFLAGS
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${rpkgs-dlog_LDFLAGS} ${rpkgs-capi_LDFLAGS} ${rpkgs-glib_LDFLAGS} "-ldl -lrt")
 
+# Set cmake CFLAGS
+SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 
+# Move result binary to the target position(/usr/bin)
 INSTALL(TARGETS ${PROJECT_NAME} DESTINATION bin)
