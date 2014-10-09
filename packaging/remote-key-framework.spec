@@ -1,7 +1,7 @@
 ## Basic Descriptions of this package
 Name:       remote-key-framework
 Summary:    Remote key framework
-Version:		1.0
+Version:		1.2
 Release:    1
 Group:      Framework/system
 License:    Apache License, Version 2.0
@@ -44,9 +44,9 @@ mkdir -p %{buildroot}/usr/share/license
 cp LICENSE %{buildroot}/usr/share/license/%{name}
 
 # install systemd service
-mkdir -p %{buildroot}%{_libdir}/systemd/system/multi-user.target.wants
+mkdir -p %{buildroot}%{_libdir}/systemd/system/graphical.target.wants
 install -m 0644 %SOURCE1 %{buildroot}%{_libdir}/systemd/system/
-ln -s ../remote-key-framework.service %{buildroot}%{_libdir}/systemd/system/multi-user.target.wants/remote-key-framework.service
+ln -s ../remote-key-framework.service %{buildroot}%{_libdir}/systemd/system/graphical.target.wants/remote-key-framework.service
 
 ## Postprocess script
 %post 
@@ -56,5 +56,5 @@ ln -s ../remote-key-framework.service %{buildroot}%{_libdir}/systemd/system/mult
 %manifest remote-key-framework.manifest
 %{_bindir}/rkf_server
 %{_libdir}/systemd/system/remote-key-framework.service
-%{_libdir}/systemd/system/multi-user.target.wants/remote-key-framework.service
+%{_libdir}/systemd/system/graphical.target.wants/remote-key-framework.service
 /usr/share/license/%{name}

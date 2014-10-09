@@ -1,12 +1,12 @@
-
 [Unit]
 Description=Start the remote key framework
+After=load-virtual-homekey.service bluetooth.service
 
 [Service]
-ExecStart=/usr/bin/rkf_server
+#You can the name of bluetooth device by changing the parameter to rkf_server.
+ExecStart=/usr/bin/rkf_server Tizen-RK
 Restart=always
-RestartSec=3
+RestartSec=1
 
 [Install]
-WantedBy=multi-user.target
-
+WantedBy=graphical.target

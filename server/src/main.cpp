@@ -20,6 +20,7 @@ static const char uuid[] = "00001101-0000-1000-8000-00805F9B34FB";
 
 // Lifecycle of this framework
 int rkf_initialize_bluetooth(void);
+int rkf_finalize_bluetooth_socket(void);
 int rkf_finalize_bluetooth(void);
 int rkf_listen_connection(void);
 int rkf_send_data(const char *, int);
@@ -31,7 +32,7 @@ void rkf_socket_connection_state_changed_cb(int, bt_socket_connection_state_e, b
 void rkf_state_changed_cb(int, bt_adapter_state_e, void *);
 gboolean timeout_func_cb(gpointer);
 
-int rkf_initialize_bluetooth(void) {
+int rkf_initialize_bluetooth(const char *device_name) {
 	// Initialize bluetooth and get adapter state
 	int ret;
 	ret = bt_initialize();
@@ -83,9 +84,8 @@ int rkf_initialize_bluetooth(void) {
 			return -5;
 		}
 
-		char new_name[]="RKServer";
-		if(strncmp(name, new_name, strlen(name)) != 0) {
-			if(bt_adapter_set_name(new_name) != BT_ERROR_NONE)
+		if(strncmp(name, device_name, strlen(name)) != 0) {
+			if(bt_adapter_set_name(device_name) != BT_ERROR_NONE)
 			{   
 				if (NULL != name)
 					free(name);
@@ -143,7 +143,7 @@ int rkf_initialize_bluetooth(void) {
 	return 0;
 }
 
-int rkf_finalize_bluetooth(void) {
+int rkf_finalize_bluetooth_socket(void) {
 	int ret;
 	sleep(5); // Wait for completing delivery
 	ret = bt_socket_destroy_rfcomm(gSocketFd);
@@ -153,6 +153,11 @@ int rkf_finalize_bluetooth(void) {
 		return -1;
 	}
 
+	bt_deinitialize();
+	return 0;
+}
+
+int rkf_finalize_bluetooth(void) {
 	bt_deinitialize();
 	return 0;
 }
@@ -244,6 +249,7 @@ void rkf_socket_connection_state_changed_cb(int result, bt_socket_connection_sta
 //		if(connection != NULL) {
 //			ALOGD("RemoteKeyFW: disconnected (%d,%s)", connection->local_role, connection->remote_address);
 //		}
+		g_main_loop_quit(gMainLoop);
 	}
 }
 
@@ -254,6 +260,7 @@ void rkf_state_changed_cb(int result, bt_adapter_state_e adapter_state, void *us
 			gBtState = BT_ADAPTER_ENABLED;
 		} else {
 			ALOGD("RemoteKeyFW: failed to enable BT.: %x", result);
+			gBtState = BT_ADAPTER_DISABLED;
 		}
 	}
 	if(gMainLoop) {
@@ -274,37 +281,47 @@ gboolean timeout_func_cb(gpointer data)
 
 int main(int argc, char *argv[])
 {
-	gMainLoop = g_main_loop_new(NULL, FALSE);
 	int error, ret = 0;
+	const char default_device_name[] = "Tizen-RK";
+	const char *device_name = NULL;
+	gMainLoop = g_main_loop_new(NULL, FALSE);
 	ALOGD("Sever started\n");
 
+	if(argc < 2) {
+		char errMsg[] = "No bluetooth device name, so its name is set as default.";
+		printf("%s\n", errMsg);
+		ALOGW("%s\n", errMsg);
+		device_name = default_device_name;
+	} else {
+		device_name = argv[1];
+	}
+
 	// Initialize bluetooth
-	error = rkf_initialize_bluetooth();
+	error = rkf_initialize_bluetooth(device_name);
 	if(error != 0) {
-		ret = -1;
-		goto error_end;
+		ret = -2;
+		goto error_end_without_socket;
 	}
 	ALOGD("succeed in rkf_initialize_bluetooth()\n");
 
 	// Listen connection
 	error = rkf_listen_connection();
 	if(error != 0) {
-		ret = -2;
-		goto error_end;
+		ret = -3;
+		goto error_end_with_socket;
 	}
-	ALOGD("succeed in rkf_initialize_listen_connection()\n");
 
 	// If succeed to accept a connection, start a main loop.
 	rkf_main_loop();
-	ALOGD("Main loop end\n");
-
-	// Finalized bluetooth
-	rkf_finalize_bluetooth();
 
 	ALOGI("Server is terminated successfully\n");
-	return 0;
 
-error_end:
+error_end_with_socket:
+	// Finalized bluetooth
+	rkf_finalize_bluetooth_socket();
+
+error_end_without_socket:
+	rkf_finalize_bluetooth();
 	return ret;
 }
 
