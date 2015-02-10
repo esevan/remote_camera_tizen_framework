@@ -1,11 +1,11 @@
-project(rkf_server CXX)
+project(tp_server CXX)
 
 # Find required modules
 # PKG_CHECK_MODULES: used to check for given modules
 # PKG_SEARCH_MODULE: used to check for given modules and uses the first working one
 INCLUDE(FindPkgConfig)
 PKG_CHECK_MODULES(rpkgs-dlog REQUIRED dlog)
-PKG_CHECK_MODULES(rpkgs-capi REQUIRED capi-network-bluetooth capi-system-info)
+PKG_CHECK_MODULES(rpkgs-capi REQUIRED capi-system-info)
 PKG_CHECK_MODULES(rpkgs-glib REQUIRED glib-2.0)
 
 # Add CFLAGS used for required modules
@@ -18,6 +18,9 @@ INCLUDE_DIRECTORIES(
 	${CMAKE_CURRENT_SOURCE_DIR}/include
 	${rpkgs-dlog_INCLUDE_DIRS}
 	${rpkgs-capi_INCLUDE_DIRS}
+	/usr/include/dbus-1.0
+	/usr/lib/dbus-1.0/include
+	/usr/lib/glib-2.0/include
 	)
 
 # Set sources
@@ -28,6 +31,10 @@ ADD_EXECUTABLE(${PROJECT_NAME}
 
 # Set LDFLAGS
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${rpkgs-dlog_LDFLAGS} ${rpkgs-capi_LDFLAGS} ${rpkgs-glib_LDFLAGS} "-ldl -lrt")
+
+# Set Linker Flags
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} "-ldbus-1" )
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} "-ldbus-glib-1" )
 
 # Set CFLAGS
 ADD_DEFINITIONS(-Wall -O3) 

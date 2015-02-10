@@ -1,25 +1,26 @@
 ## Basic Descriptions of this package
-Name:       remote-key-framework
-Summary:    Remote key framework
+Name:       app-prefetcher
+Summary:    Prefetching application files before launch
 Version:		1.2
 Release:    1
-Group:      Framework/system
+Group:      Framework/appfw
 License:    Apache License, Version 2.0
 Source0:    %{name}-%{version}.tar.gz
-Source1:    remote-key-framework.service
+Source1:    app-prefetcher.service
 
 # Required packages
 # Pkgconfig tool helps to find libraries that have already been installed
 BuildRequires:  cmake
 BuildRequires:  libattr-devel
 BuildRequires:  pkgconfig(glib-2.0)
-BuildRequires:  pkgconfig(capi-network-bluetooth)
 BuildRequires:  pkgconfig(capi-system-info)
 BuildRequires:  pkgconfig(dlog)
+BuildRequires:	pkgconfig(dbus-1)
+BuildRequires:	pkgconfig(dbus-glib-1)
 
 ## Description string that this package's human users can understand
 %description
-Remote key framework
+Tizen application Prefetcher
 
 
 ## Preprocess script
@@ -46,15 +47,15 @@ cp LICENSE %{buildroot}/usr/share/license/%{name}
 # install systemd service
 mkdir -p %{buildroot}%{_libdir}/systemd/system/graphical.target.wants
 install -m 0644 %SOURCE1 %{buildroot}%{_libdir}/systemd/system/
-ln -s ../remote-key-framework.service %{buildroot}%{_libdir}/systemd/system/graphical.target.wants/remote-key-framework.service
+ln -s ../app-prefetcher.service %{buildroot}%{_libdir}/systemd/system/graphical.target.wants/app-prefetcher.service
 
 ## Postprocess script
 %post 
 
 ## Binary Package: File list
 %files
-%manifest remote-key-framework.manifest
-%{_bindir}/rkf_server
-%{_libdir}/systemd/system/remote-key-framework.service
-%{_libdir}/systemd/system/graphical.target.wants/remote-key-framework.service
+%manifest app-prefetcher.manifest
+%{_bindir}/tp_server
+%{_libdir}/systemd/system/app-prefetcher.service
+%{_libdir}/systemd/system/graphical.target.wants/app-prefetcher.service
 /usr/share/license/%{name}

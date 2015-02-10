@@ -1,0 +1,167 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+APPID_LEN	include/prefetcher.h	10;"	d
+DBG	include/common.h	41;"	d
+DBG	include/common.h	48;"	d
+DBG	include/common.h	53;"	d
+DBG	include/common.h	61;"	d
+DBG	include/common.h	68;"	d
+DbgPrint	include/common.h	62;"	d
+DbgPrint	include/common.h	67;"	d
+ERR	include/common.h	39;"	d
+ERR	include/common.h	46;"	d
+ERR	include/common.h	52;"	d
+ERR	include/common.h	58;"	d
+ERR	include/common.h	65;"	d
+EXTAPI	src/common.cpp	14;"	d	file:
+EX_RANGE_COVERED	include/prefetcher.h	/^	EX_RANGE_COVERED = 1,$/;"	e	enum:ex_range_convered
+EX_RANGE_COVERING	include/prefetcher.h	/^	EX_RANGE_COVERING = 0,$/;"	e	enum:ex_range_convered
+EX_RANGE_NON_OVERLAPPED	include/prefetcher.h	/^	EX_RANGE_NON_OVERLAPPED = 3,$/;"	e	enum:ex_range_convered
+EX_RANGE_OVERLAPPED	include/prefetcher.h	/^	EX_RANGE_OVERLAPPED = 2,$/;"	e	enum:ex_range_convered
+FALSE	include/common.h	16;"	d
+FILENAME_LEN	include/prefetcher.h	11;"	d
+FILE_LENGTH	src/common.cpp	18;"	d	file:
+INFO	include/common.h	40;"	d
+INFO	include/common.h	47;"	d
+INFO	include/common.h	54;"	d
+INFO	include/common.h	59;"	d
+INFO	include/common.h	69;"	d
+PMT_SIZE	include/prefetcher.h	12;"	d
+TP_ERROR_ETC	include/common.h	/^	TP_ERROR_ETC = 3,$/;"	e	enum:tp_error_type
+TP_ERROR_FILE_OPEN	include/common.h	/^	TP_ERROR_FILE_OPEN = 2,$/;"	e	enum:tp_error_type
+TP_ERROR_INVALID_ARGUMENT	include/common.h	/^	TP_ERROR_INVALID_ARGUMENT = 1,$/;"	e	enum:tp_error_type
+TP_ERROR_NONE	include/common.h	/^	TP_ERROR_NONE = 0,$/;"	e	enum:tp_error_type
+TP_Extractor	include/prefetcher.h	/^class TP_Extractor{$/;"	c
+TP_Extractor	src/main.cpp	/^TP_Extractor::TP_Extractor(){$/;"	f	class:TP_Extractor
+TP_Extractor	src/main.cpp	/^TP_Extractor::TP_Extractor(TP_Manager *manager){$/;"	f	class:TP_Extractor
+TP_LOG_DBG	include/common.h	/^	TP_LOG_DBG			= 2,$/;"	e	enum:tp_priority_type
+TP_LOG_DLOG	include/common.h	/^	TP_LOG_DLOG			= 3,$/;"	e	enum:tp_log_type
+TP_LOG_ERR	include/common.h	/^	TP_LOG_ERR			= 1,$/;"	e	enum:tp_priority_type
+TP_LOG_INFO	include/common.h	/^	TP_LOG_INFO		= 3,$/;"	e	enum:tp_priority_type
+TP_LOG_PRINT_FILE	include/common.h	/^	TP_LOG_PRINT_FILE		= 1,$/;"	e	enum:tp_log_type
+TP_LOG_SYSLOG	include/common.h	/^	TP_LOG_SYSLOG			= 2,$/;"	e	enum:tp_log_type
+TP_Manager	include/prefetcher.h	/^class TP_Manager{$/;"	c
+TP_Manager	src/main.cpp	/^TP_Manager::TP_Manager(){$/;"	f	class:TP_Manager
+TP_Prefetcher	include/prefetcher.h	/^class TP_Prefetcher{$/;"	c
+TP_Prefetcher	src/main.cpp	/^TP_Prefetcher::TP_Prefetcher(){$/;"	f	class:TP_Prefetcher
+TP_Profiler	include/prefetcher.h	/^class TP_Profiler{$/;"	c
+TP_Profiler	src/main.cpp	/^TP_Profiler::TP_Profiler(){$/;"	f	class:TP_Profiler
+TP_Profiler	src/main.cpp	/^TP_Profiler::TP_Profiler(TP_Manager *manager){$/;"	f	class:TP_Profiler
+TP_SERVER_MSG_LOG_FILE	src/common.cpp	17;"	d	file:
+TP_STAT_EXTRACTED	include/prefetcher.h	/^	TP_STAT_EXTRACTED = 2,$/;"	e	enum:app_prefetching_stat
+TP_STAT_EXTRACTING	include/prefetcher.h	/^	TP_STAT_EXTRACTING = 1,$/;"	e	enum:app_prefetching_stat
+TP_STAT_PROFILING	include/prefetcher.h	/^	TP_STAT_PROFILING = 0,$/;"	e	enum:app_prefetching_stat
+TRUE	include/common.h	12;"	d
+_COMMON_H_	include/common.h	3;"	d
+__PREFETCHER_H__	include/prefetcher.h	2;"	d
+_ex_appinfo	include/prefetcher.h	/^typedef __packed struct _ex_appinfo{$/;"	s
+_ex_table_entry_t	include/prefetcher.h	/^typedef struct _ex_table_entry_t{$/;"	s
+_mg_app_desc	include/prefetcher.h	/^typedef struct __packed _mg_app_desc{$/;"	s
+_name_len_t	include/prefetcher.h	/^typedef struct _name_len_t{$/;"	s
+_off_len_t	include/prefetcher.h	/^typedef struct _off_len_t{$/;"	s
+_profile_brief_t	include/prefetcher.h	/^typedef __packed struct _profile_brief_t{$/;"	s
+adt_dev_mutex	include/prefetcher.h	/^		GMutex adt_dev_mutex;$/;"	m	class:TP_Manager
+adt_dev_mutex_lock	src/main.cpp	/^void TP_Manager::adt_dev_mutex_lock(){$/;"	f	class:TP_Manager
+adt_dev_mutex_unlock	src/main.cpp	/^void TP_Manager::adt_dev_mutex_unlock(){$/;"	f	class:TP_Manager
+adt_mutex	include/prefetcher.h	/^		GMutex adt_mutex;$/;"	m	class:TP_Manager
+adt_mutex_lock	src/main.cpp	/^void TP_Manager::adt_mutex_lock(){$/;"	f	class:TP_Manager
+adt_mutex_unlock	src/main.cpp	/^void TP_Manager::adt_mutex_unlock(){$/;"	f	class:TP_Manager
+app_desc_table	include/prefetcher.h	/^		GTree *app_desc_table;$/;"	m	class:TP_Manager
+app_prefetching_stat	include/prefetcher.h	/^enum app_prefetching_stat {$/;"	g
+appid	include/prefetcher.h	/^	char appid[APPID_LEN]; \/\/key$/;"	m	struct:_ex_appinfo
+appid	include/prefetcher.h	/^	char appid[APPID_LEN];$/;"	m	struct:_ex_table_entry_t
+appid	include/prefetcher.h	/^	char appid[APPID_LEN];$/;"	m	struct:_mg_app_desc
+compare_adt_key	src/main.cpp	/^gint TP_Manager::compare_adt_key(gconstpointer mg_app_id1, gconstpointer mg_app_id2){$/;"	f	class:TP_Manager
+compare_filename	src/main.cpp	/^gint TP_Extractor::compare_filename(gconstpointer name_len1,$/;"	f	class:TP_Extractor
+compare_offset	src/main.cpp	/^gint TP_Extractor::compare_offset(gconstpointer off_len1, gconstpointer off_len2){$/;"	f	class:TP_Extractor
+dbus_filter	src/main.cpp	/^static DBusHandlerResult dbus_filter(DBusConnection *connection,$/;"	f	file:
+dbus_listen_connection	src/main.cpp	/^int dbus_listen_connection(){$/;"	f
+destroy_adt_key	src/main.cpp	/^void TP_Manager::destroy_adt_key(gpointer app_id){$/;"	f	class:TP_Manager
+destroy_adt_val	src/main.cpp	/^void TP_Manager::destroy_adt_val(gpointer app_desc){$/;"	f	class:TP_Manager
+enabled	include/prefetcher.h	/^		int enabled;$/;"	m	class:TP_Profiler
+ex_app_info_t	include/prefetcher.h	/^} ex_app_info_t;$/;"	t	typeref:struct:_ex_appinfo
+ex_dequeue	src/main.cpp	/^void TP_Extractor::ex_dequeue(){$/;"	f	class:TP_Extractor
+ex_enqueue	src/main.cpp	/^void TP_Extractor::ex_enqueue(int pid, char *appid){$/;"	f	class:TP_Extractor
+ex_entry_t	include/prefetcher.h	/^} ex_entry_t;$/;"	t	typeref:struct:_ex_table_entry_t
+ex_queue	include/prefetcher.h	/^		GQueue *ex_queue;$/;"	m	class:TP_Extractor
+ex_queue_get_curr	src/main.cpp	/^ex_entry_t *TP_Extractor::ex_queue_get_curr(){	$/;"	f	class:TP_Extractor
+ex_queue_lock	src/main.cpp	/^int TP_Extractor::ex_queue_lock(){$/;"	f	class:TP_Extractor
+ex_queue_mutex_lock	include/prefetcher.h	/^		GMutex ex_queue_mutex_lock;$/;"	m	class:TP_Extractor
+ex_queue_unlock	src/main.cpp	/^int TP_Extractor::ex_queue_unlock(){$/;"	f	class:TP_Extractor
+ex_range_convered	include/prefetcher.h	/^enum ex_range_convered {$/;"	g
+extract	src/main.cpp	/^gpointer TP_Extractor::extract(gpointer data){$/;"	f	class:TP_Extractor
+fd_adt	include/prefetcher.h	/^		int fd_adt;$/;"	m	class:TP_Manager
+fd_profiler	include/prefetcher.h	/^		int fd_profiler;$/;"	m	class:TP_Manager
+filename	include/prefetcher.h	/^	char filename[FILENAME_LEN]; \/\/key$/;"	m	struct:_name_len_t
+filename	include/prefetcher.h	/^	unsigned char filename[FILENAME_LEN];$/;"	m	struct:_profile_brief_t
+flush_adt	src/main.cpp	/^void TP_Manager::flush_adt(){$/;"	f	class:TP_Manager
+flush_adt_entry	src/main.cpp	/^gboolean TP_Manager::flush_adt_entry(gpointer key, gpointer adt_entry, gpointer p_fd){$/;"	f	class:TP_Manager
+flush_app_info	src/main.cpp	/^int TP_Extractor::flush_app_info(ex_app_info_t *app_info){$/;"	f	class:TP_Extractor
+flush_name_len	src/main.cpp	/^void TP_Extractor::flush_name_len(gpointer p_name_len_entry, gpointer user_data){$/;"	f	class:TP_Extractor
+flush_off_len	src/main.cpp	/^void TP_Extractor::flush_off_len(gpointer p_off_len_entry, gpointer user_data){$/;"	f	class:TP_Extractor
+free_app_info_content	src/main.cpp	/^void TP_Extractor::free_app_info_content(ex_app_info_t *app_info){$/;"	f	class:TP_Extractor
+free_ex_entry	src/main.cpp	/^void TP_Extractor::free_ex_entry(gpointer p_ex_entry){$/;"	f	class:TP_Extractor
+free_name_len	src/main.cpp	/^void TP_Extractor::free_name_len(gpointer p_name_len){$/;"	f	class:TP_Extractor
+free_off_len	src/main.cpp	/^void TP_Extractor::free_off_len(gpointer p_off_len){$/;"	f	class:TP_Extractor
+gMainLoop	src/main.cpp	/^static GMainLoop *gMainLoop = NULL;$/;"	v	file:
+get_adt_entry	src/main.cpp	/^mg_app_desc *TP_Manager::get_adt_entry(char *appid){$/;"	f	class:TP_Manager
+get_current_app_info	src/main.cpp	/^int TP_Extractor::get_current_app_info(ex_app_info_t *app_info, char *appid){	$/;"	f	class:TP_Extractor
+get_name_len	src/main.cpp	/^name_len_t *TP_Extractor::get_name_len(ex_app_info_t *app_info,$/;"	f	class:TP_Extractor
+is_created	src/main.cpp	/^int TP_Profiler::is_created(){$/;"	f	class:TP_Profiler
+is_enabled	src/main.cpp	/^int TP_Profiler::is_enabled(){$/;"	f	class:TP_Profiler
+len	include/prefetcher.h	/^	size_t len;$/;"	m	struct:_profile_brief_t
+len	include/prefetcher.h	/^	unsigned int len;$/;"	m	struct:_off_len_t
+load_adt	src/main.cpp	/^void TP_Manager::load_adt(void){$/;"	f	class:TP_Manager
+main	src/main.cpp	/^int main()$/;"	f
+mg_app_desc	include/prefetcher.h	/^} mg_app_desc;$/;"	t	typeref:struct:_mg_app_desc
+name_len_list	include/prefetcher.h	/^	GList *name_len_list;$/;"	m	struct:_ex_appinfo
+name_len_t	include/prefetcher.h	/^} name_len_t;$/;"	t	typeref:struct:_name_len_t
+off	include/prefetcher.h	/^	int off;$/;"	m	struct:_off_len_t
+off_len_list	include/prefetcher.h	/^	GList *off_len_list;$/;"	m	struct:_name_len_t
+off_len_t	include/prefetcher.h	/^} off_len_t;$/;"	t	typeref:struct:_off_len_t
+offset	include/prefetcher.h	/^	int offset;$/;"	m	struct:_profile_brief_t
+pf_dev_mutex	include/prefetcher.h	/^		GMutex pf_dev_mutex;$/;"	m	class:TP_Manager
+pf_dev_mutex_lock	src/main.cpp	/^void TP_Manager::pf_dev_mutex_lock(){$/;"	f	class:TP_Manager
+pf_dev_mutex_unlock	src/main.cpp	/^void TP_Manager::pf_dev_mutex_unlock(){$/;"	f	class:TP_Manager
+pid	include/prefetcher.h	/^	int pid;$/;"	m	struct:_ex_table_entry_t
+pid	include/prefetcher.h	/^	int pid;$/;"	m	struct:_profile_brief_t
+prefetch	src/main.cpp	/^gpointer TP_Prefetcher::prefetch(gpointer g_appid){$/;"	f	class:TP_Prefetcher
+priv_appid	src/main.cpp	/^static char priv_appid[APPID_LEN] = {0,};$/;"	v	file:
+priv_pid	src/main.cpp	/^static int priv_pid = 0;$/;"	v	file:
+profile_brief_t	include/prefetcher.h	/^} profile_brief_t;$/;"	t	typeref:struct:_profile_brief_t
+profiler_disable	src/main.cpp	/^void TP_Profiler::profiler_disable(){$/;"	f	class:TP_Profiler
+profiler_enable	src/main.cpp	/^void TP_Profiler::profiler_enable(int pid){$/;"	f	class:TP_Profiler
+ret_if	include/common.h	112;"	d
+ret_if	include/common.h	79;"	d
+retm_if	include/common.h	122;"	d
+retm_if	include/common.h	91;"	d
+retv_if	include/common.h	117;"	d
+retv_if	include/common.h	85;"	d
+retvm_if	include/common.h	128;"	d
+retvm_if	include/common.h	98;"	d
+start_extractor	src/main.cpp	/^GThread *TP_Extractor::start_extractor(){$/;"	f	class:TP_Extractor
+start_prefetcher	src/main.cpp	/^GThread *TP_Prefetcher::start_prefetcher(char *appid){$/;"	f	class:TP_Prefetcher
+stat	include/prefetcher.h	/^	int stat;$/;"	m	struct:_mg_app_desc
+tp_debug_file_buf	src/common.cpp	/^static char tp_debug_file_buf[FILE_LENGTH];$/;"	v	file:
+tp_debug_file_fd	src/common.cpp	/^static int tp_debug_file_fd;$/;"	v	file:
+tp_error_type	include/common.h	/^enum tp_error_type {$/;"	g
+tp_extractor	include/prefetcher.h	/^		TP_Extractor *tp_extractor;$/;"	m	class:TP_Manager
+tp_log	src/common.cpp	/^EXTAPI void tp_log(int type , int priority , const char *tag , const char *fmt , ...)$/;"	f
+tp_log_type	include/common.h	/^enum tp_log_type {$/;"	g
+tp_manager	include/prefetcher.h	/^		TP_Manager *tp_manager;$/;"	m	class:TP_Extractor
+tp_manager	include/prefetcher.h	/^		TP_Manager *tp_manager;$/;"	m	class:TP_Profiler
+tp_manager	src/main.cpp	/^static TP_Manager *tp_manager = NULL;$/;"	v	file:
+tp_prefetcher	include/prefetcher.h	/^		TP_Prefetcher *tp_prefetcher;$/;"	m	class:TP_Manager
+tp_priority_type	include/common.h	/^enum tp_priority_type {$/;"	g
+tp_profiler	include/prefetcher.h	/^		TP_Profiler *tp_profiler;$/;"	m	class:TP_Manager
+update_app_info	src/main.cpp	/^int TP_Extractor::update_app_info(ex_app_info_t *app_info,$/;"	f	class:TP_Extractor
+update_file	src/main.cpp	/^void TP_Extractor::update_file(name_len_t *p_name_len, int offset, unsigned int length){$/;"	f	class:TP_Extractor
+warn_if	include/common.h	107;"	d
+warn_if	include/common.h	74;"	d
+~TP_Extractor	src/main.cpp	/^TP_Extractor::~TP_Extractor(){$/;"	f	class:TP_Extractor
+~TP_Manager	src/main.cpp	/^TP_Manager::~TP_Manager(){$/;"	f	class:TP_Manager
+~TP_Profiler	src/main.cpp	/^TP_Profiler::~TP_Profiler(){$/;"	f	class:TP_Profiler
