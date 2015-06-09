@@ -1,9 +1,9 @@
 [Unit]
-Description=Start app-prefetcher
+Description=Start remote_camera
 After=
 
 [Service]
-ExecStart=/usr/bin/tp_server
+ExecStart=/usr/bin/remote_camera
 Restart=always
 RestartSec=1
 

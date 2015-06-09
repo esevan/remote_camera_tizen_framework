@@ -1,4 +1,4 @@
-project(tp_server CXX)
+project(remote_camera CXX)
 
 # Find required modules
 # PKG_CHECK_MODULES: used to check for given modules

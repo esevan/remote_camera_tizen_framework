@@ -1,6 +1,6 @@
 # Reqired CMake version and project name
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(app-prefetcher)
+PROJECT(remote_camera)
 
 SET(PREFIX ${CMAKE_INSTALL_PREFIX})
 SET(EXEC_PREFIX "\${prefix}")

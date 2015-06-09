@@ -1,12 +1,12 @@
 ## Basic Descriptions of this package
-Name:       app-prefetcher
-Summary:    Prefetching application files before launch
+Name:       remote_camera
+Summary:    Receiveing from android and sending to the camera application the frame buffer
 Version:		1.2
 Release:    1
-Group:      Framework/appfw
+Group:      Framework/multimedia
 License:    Apache License, Version 2.0
 Source0:    %{name}-%{version}.tar.gz
-Source1:    app-prefetcher.service
+Source1:    remote_camera.service
 
 # Required packages
 # Pkgconfig tool helps to find libraries that have already been installed
@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig(dbus-glib-1)
 
 ## Description string that this package's human users can understand
 %description
-Tizen application Prefetcher
+Tizen remote camera 
 
 
 ## Preprocess script
@@ -47,15 +47,15 @@ cp LICENSE %{buildroot}/usr/share/license/%{name}
 # install systemd service
 mkdir -p %{buildroot}%{_libdir}/systemd/system/graphical.target.wants
 install -m 0644 %SOURCE1 %{buildroot}%{_libdir}/systemd/system/
-ln -s ../app-prefetcher.service %{buildroot}%{_libdir}/systemd/system/graphical.target.wants/app-prefetcher.service
+ln -s ../remote_camera.service %{buildroot}%{_libdir}/systemd/system/graphical.target.wants/remote_camera.service
 
 ## Postprocess script
 %post 
 
 ## Binary Package: File list
 %files
-%manifest app-prefetcher.manifest
-%{_bindir}/tp_server
-%{_libdir}/systemd/system/app-prefetcher.service
-%{_libdir}/systemd/system/graphical.target.wants/app-prefetcher.service
+%manifest remote_camera.manifest
+%{_bindir}/remote_camera
+%{_libdir}/systemd/system/remote_camera.service
+%{_libdir}/systemd/system/graphical.target.wants/remote_camera.service
 /usr/share/license/%{name}
