@@ -178,8 +178,9 @@ gpointer rcvSockThread(gpointer data)
 				//	}
 
 					ERR("Received File Size %d(%d) \n", numBytesRcvd, fileSize);
-					if(numBytesRcvd == fileSize)
-						write(fd_rcMem, frame, numBytesRcvd);
+					if(0 != rcvdFileSize){
+						write(fd_rcMem, frame, rcvdFileSize);
+					}
 
 				}
 				

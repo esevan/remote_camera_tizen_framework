@@ -46,7 +46,7 @@ void rc_log(int type, int priority, const char *tag, const char *fmt , ...);
 #ifdef LOG_TAG
 	#undef LOG_TAG
 #endif
-#define LOG_TAG "APP_PF"
+#define LOG_TAG "RM_CM"
 
 #if defined(_DEBUG) ||defined(USE_FILE_DEBUG)
 

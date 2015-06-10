@@ -155,9 +155,9 @@ gpointer rcvSockThread(gpointer data)
 					fileSize = atoi(rcvFileName);
 					//ERR("File Size %d \n", fileSize);
 					uint32_t rcvdFileSize = 0;
-					//while(rcvdFileSize < fileSize){
-						//char buf[512];
-						numBytesRcvd = recv(clnt_sock, frame, fileSize, MSG_WAITALL);
+					while(rcvdFileSize < fileSize){
+						char buf[512];
+						numBytesRcvd = recv(clnt_sock, buf, 512, 0);
 						//ERR("%d received\n", rcvdFileSize+numBytesRcvd);
 
 						if (numBytesRcvd == -1){
@@ -171,15 +171,16 @@ gpointer rcvSockThread(gpointer data)
 						}
 
 						//ERR("Frame: %d, RCVD: %d, Buf:%d\n", FRAME_SIZ, rcvdFileSize, numBytesRcvd);
-				//		memcpy(frame+rcvdFileSize, buf, numBytesRcvd);
+						memcpy(frame+rcvdFileSize, buf, numBytesRcvd);
 
-				//		rcvdFileSize += numBytesRcvd;
-						//usleep(250);
-				//	}
+						rcvdFileSize += numBytesRcvd;
+						usleep(250);
+					}
 
-					ERR("Received File Size %d(%d) \n", numBytesRcvd, fileSize);
-					if(numBytesRcvd == fileSize)
-						write(fd_rcMem, frame, numBytesRcvd);
+					ERR("Received File Size %d(%d) \n", rcvdFileSize, fileSize);
+					if(0 != rcvdFileSize){
+						write(fd_rcMem, frame, rcvdFileSize);
+					}
 
 				}
 				
